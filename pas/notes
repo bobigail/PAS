@@ -1,0 +1,15 @@
+chain, residue id, residue name, (no pdbx_num_res) (dont care about symmertyr), seq_id both auth & label. 
+
+in binding site, 18, 19 & 20 are water. auth_asym_id is A, but label_asym_id is 
+
+
+nonpoly etc
+
+<PDBx:pdbx_entity_nonpoly entity_id="2"><PDBx:comp_id>HEM</PDBx:comp_id><PDBx:name>PROTOPORPHYRIN IX CONTAINING FE</PDBx:name></PDBx:pdbx_entity_nonpoly><PDBx:pdbx_entity_nonpoly entity_id="3"><PDBx:comp_id>HOH</PDBx:comp_id><PDBx:name>water</PDBx:name></PDBx:pdbx_entity_nonpoly></PDBx:pdbx_entity_nonpolyCategory>
+
+
+co-factor waht is in pdb structure. what it has been co-crystalized
+what does this structure bind
+
+underscores to hyphens
+

@@ -1,0 +1,5 @@
+<RESIDUE>
+	<residue_three_letters res3_id="THREE_LETTER_CODE"></residue_three_letters>
+		<residue_name res_name="RESIDUE_NAME"></residue_name>
+		<residue_one_letter res1_id="ONE_LETTER_CODE"></residue_one_letter>
+</RESIDUE>
