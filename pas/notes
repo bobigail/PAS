@@ -1,6 +1,5 @@
 chain, residue id, residue name, (no pdbx_num_res) (dont care about symmertyr), seq_id both auth & label. 
-
-in binding site, 18, 19 & 20 are water. auth_asym_id is A, but label_asym_id is 
+ 
 
 
 nonpoly etc
@@ -11,5 +10,5 @@ nonpoly etc
 co-factor waht is in pdb structure. what it has been co-crystalized
 what does this structure bind
 
-underscores to hyphens
+
 

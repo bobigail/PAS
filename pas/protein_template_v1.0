@@ -1,46 +1,51 @@
 <PAS_DATABASE>
     
-    # record name
-    <PAS name="PDB_ID">
     
+    <PAS record_id="a_number"> 
     
-		# organism of origin and host if transfected
-		<entity_src_gen entity_id="ENTITY_ID"> 
+    	<pdb_id name="PDB_ID"/> <!-- record name  extract from datablockName in <PDBx:datablock -->
 		
-			# organism of gene origin
+		<entity_src_gen entity_id="ENTITY_ID"> <!-- organism of origin (and host if transfected) -->
+		
+			<!-- # organism of gene origin -->
 			<gene_src_genus>GENUS_OF_ORIGIN</gene_src_genus>
 			<pdbx_gene_src_scientific_name>SCIENTIFIC_NAME_OF_ORIGIN_SPECIES</pdbx_gene_src_scientific_name>
 			<pdbx_gene_src_ncbi_taxonomy_id>TAXONOMY_IDENTIFIER</pdbx_gene_src_ncbi_taxonomy_id>
 					
-			# organism of host (if gene was transfected)
+			<!-- # organism of host (if gene was transfected) -->
 			<host_org_genus>HOST_GENUS<host_org_genus>
 			<pdbx_host_org_scientific_name>SCIENTIFIC_NAME_OF_HOST_ORGANISM</pdbx_host_org_scientific_name>
 			<pdbx_host_org_ncbi_taxonomy_id>HOST_TAXONOMY_IDENTIFIER</pdbx_host_org_ncbi_taxonomy_id>
 			<pdbx_host_org_vector>VECTOR_OF_TRANSFECTION</pdbx_host_org_vector>
 		</entity_src_gen>
 		
+		<!-- # type of protein of origin -->
+		<type_of_protein protein_type="FOUND_AT_PDBx:pdbx_keywords"></type_of_protein> <!-- # main category of protein in pdb -->
+		<other_type_keywords>EXTRACT_LIST_FROM_PDBx:text</other_type_keywords>
 		
-		# binding site information
+		<!-- # binding pocket and structure information -->
 		<binding_details name="STRING_FROM_PDBx:details_in_PDBx:struct_siteCategory">
 			
 			<residue_id id="from PDBx:struct_site_gen id">
+				<!-- data from authors -->
+	
+				<author_seq_id>from_PDBx:auth_seq_id</author_seq_id> <!-- # The sequence id defined by the author -->
+				
+				
 				<residue_name>from_PDBx:label_comp_id</residue_name>
 				
-				# The sequence defined by the author
-				<author_seq_id>from_PDBx:auth_seq_id</author_seq_id>
 				
-				# The (standard) sequence defined by the PDB
+				
+				<!-- # The (standard) sequence defined by the PDB -->
 				<label_seq_id>from_PDBx:label_seq_id</label_seq_id>
 		</binding_detials>
 
 
-		# number of chains in domain
+		***INCORRECT. THIS IS TOTAL NUMBER OF CHAINS IN PDB. NOT IN PAS STRUCTURE<!-- # number of chains in domain -->
 		<number_of_chains>GET_THIS_FROM_NUMBER_OF_ENTRIES_IN_PDBx:struct_asymCategory</number_of_chains>
 		
 		
-		# type of protein of origin
-		<type_of_protein protein_type="FOUND_AT_PDBx:pdbx_keywords"></type_of_protein> # main category of protein in pdb
-		<other_type_keywords>EXTRACT_LIST_FROM_PDBx:text</other_type_keywords>
+		
 		
 		
 			
