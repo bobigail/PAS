@@ -11,4 +11,23 @@ co-factor waht is in pdb structure. what it has been co-crystalized
 what does this structure bind
 
 
+asym_id
+	The value of _struct_asym.id must uniquely identify a record in
+               the STRUCT_ASYM list.
 
+               Note that this item need not be a number; it can be any unique
+               identifier.
+               
+               
+comp_id
+
+
+
+seq_id
+num_res
+
+are they grouped into numbers (uniprot)
+
+which residue interacts with wihch ligand
+
+prototype of functions. what is input. what is output

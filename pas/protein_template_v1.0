@@ -1,35 +1,82 @@
 <PAS_DATABASE>
     
     
-    <PAS record_id="a_number"> 
+    <PAS record_id="uniprot id; "> 
     
-    	<pdb_id name="PDB_ID"/> <!-- record name  extract from datablockName in <PDBx:datablock -->
+    	
+    	<!-- record name  extract from datablockName in <PDBx:datablock -->
+      	<pdb_id name="PDB_ID"> 
 		
-		<entity_src_gen entity_id="ENTITY_ID"> <!-- organism of origin (and host if transfected) -->
 		
-			<!-- # organism of gene origin -->
-			<gene_src_genus>GENUS_OF_ORIGIN</gene_src_genus>
-			<pdbx_gene_src_scientific_name>SCIENTIFIC_NAME_OF_ORIGIN_SPECIES</pdbx_gene_src_scientific_name>
-			<pdbx_gene_src_ncbi_taxonomy_id>TAXONOMY_IDENTIFIER</pdbx_gene_src_ncbi_taxonomy_id>
+		
+			<!-- organism of origin (and host if transfected) -->
+			<entity_src_gen entity_id="ENTITY_ID"> 
+		
+				<!-- # organism of gene origin -->
+				<gene_src_genus>GENUS_OF_ORIGIN</gene_src_genus>
+				<gene_src_scientific_name>SCIENTIFIC_NAME_OF_ORIGIN_SPECIES</gene_src_scientific_name>
+				<gene_src_ncbi_taxonomy_id>TAXONOMY_IDENTIFIER</gene_src_ncbi_taxonomy_id>
 					
-			<!-- # organism of host (if gene was transfected) -->
-			<host_org_genus>HOST_GENUS<host_org_genus>
-			<pdbx_host_org_scientific_name>SCIENTIFIC_NAME_OF_HOST_ORGANISM</pdbx_host_org_scientific_name>
-			<pdbx_host_org_ncbi_taxonomy_id>HOST_TAXONOMY_IDENTIFIER</pdbx_host_org_ncbi_taxonomy_id>
-			<pdbx_host_org_vector>VECTOR_OF_TRANSFECTION</pdbx_host_org_vector>
-		</entity_src_gen>
+				<!-- # organism of host (if gene was transfected) -->
+				<host_org_genus>HOST_GENUS<host_org_genus>
+				<host_org_scientific_name>SCIENTIFIC_NAME_OF_HOST_ORGANISM</host_org_scientific_name>
+				<host_org_ncbi_taxonomy_id>HOST_TAXONOMY_IDENTIFIER</host_org_ncbi_taxonomy_id>
+				<host_org_vector>VECTOR_OF_TRANSFECTION</host_org_vector>
+			</entity_src_gen>
 		
-		<!-- # type of protein of origin -->
-		<type_of_protein protein_type="FOUND_AT_PDBx:pdbx_keywords"></type_of_protein> <!-- # main category of protein in pdb -->
-		<other_type_keywords>EXTRACT_LIST_FROM_PDBx:text</other_type_keywords>
 		
-		<!-- # binding pocket and structure information -->
-		<binding_details name="STRING_FROM_PDBx:details_in_PDBx:struct_siteCategory">
+		
+		
+			<!-- # type of protein of origin -->
+			<protein_type>
+		
+				<!-- # main category of protein in pdb -->
+				<type_of_protein protein_type="FOUND_AT_PDBx:pdbx_keywords"></type_of_protein> 
+				<other_type_keywords>EXTRACT_LIST_FROM_PDBx:text</other_type_keywords>
+			</protein_type>
+		
+			<!-- protein structure information -->
+			<protein_structure>
 			
-			<residue_id id="from PDBx:struct_site_gen id">
+				<!-- only if group_PDB is ATOM and not HETATM. Grab all data from atom_site-->
+				<atom_site id="ID_NUMBER">
+			
+					<!-- coordinates -->
+					<B_iso_or_equiv>NUMBER</B_iso_or_equiv>
+					<Cartn_x>NUMBER</Cartn_x>
+					<Cartn_y>NUMBER</Cartn_y>
+					<Cartn_z>NUMBER</Cartn_z>
+				
+					<!-- author information -->
+					<auth_asym_id>CHAIN_ID</auth_asym_id>
+					<auth_atom_id>ATOM_ID</auth_atom_id>
+					<auth_comp_id>THREE_LETTER_RESIDUE</auth_comp_id>
+					<auth_seq_id>ID_NUMBER</auth_seq_id>
+				
+					<!-- Standard define by PDB -->
+					<label_asym_id>CHAIN_ID</label_asym_id>
+					<label_atom_id>ATOM_ID</label_atom_id>
+					<label_comp_id>THREE_LETTER_RESIDUE</label_comp_id>
+					<label_entity_id>ID_OF_STRUCTURE</label_entity_id>
+				
+				</atom_site>
+			
+				<seq_one_letter_code>ONE_LETTER_CODE_SEQUENCE_OF_PROTEIN</seq_one_letter_code>
+				<seq_one_letter_code_can>CANONICAL_ONE_LETTER_CODE_SEQUENCE</seq_one_letter_code_can>
+			
+				<!-- is protein mutated -->
+				<mutation>NAME_OF_MUTATION_FROM_PDBx:pdbx_mutation</mutation>
+				
+			</protein_structure>
+		
+			<!-- # binding pocket and structure information -->
+			<binding_details name="STRING_FROM_PDBx:details_in_PDBx:struct_siteCategory">
+			
+				<residue_id id="from PDBx:struct_site_gen id">
+			
 				<!-- data from authors -->
-	
-				<author_seq_id>from_PDBx:auth_seq_id</author_seq_id> <!-- # The sequence id defined by the author -->
+				<!-- # The sequence id defined by the author -->
+				<author_seq_id>from_PDBx:auth_seq_id</author_seq_id> 
 				
 				
 				<residue_name>from_PDBx:label_comp_id</residue_name>
@@ -38,19 +85,55 @@
 				
 				<!-- # The (standard) sequence defined by the PDB -->
 				<label_seq_id>from_PDBx:label_seq_id</label_seq_id>
-		</binding_detials>
+			</binding_detials>
 
 
-		***INCORRECT. THIS IS TOTAL NUMBER OF CHAINS IN PDB. NOT IN PAS STRUCTURE<!-- # number of chains in domain -->
-		<number_of_chains>GET_THIS_FROM_NUMBER_OF_ENTRIES_IN_PDBx:struct_asymCategory</number_of_chains>
+			<!-- # number of chains in domain -->
+			<number_of_chains>##GET_THIS_FROM_NUMBER_OF_ENTRIES_IN_PDBx:struct_asymCategory minus number of entities with the tag PDBx:pdbx_entity_nonpoly entity_id="**"</number_of_chains>
 		
 		
 		
-		
-		
+			<ligand_info> <!-- from PDBx:pdbx_entity_nonpolyCategory -->
 			
-
+				<!-- id number for the entity -->
+				<entity_nonpoly entity_id="NUMBER">
+			
+				<!-- ligand name -->
+				<comp_id>3_letter_ligand_id</comp_id>
+				<name>name_of_ligand</name>
+				
+					<!-- link to ligand database here -->
+				
+					<other_ligand>FROM_OTHER_SOURCES</other_ligand>
 		
+			</ligand_info>
+			
+			
+			<!-- binding mode of ligand -->
+			<struct_connCategory> <!-- connection between portions of the structure -->
+				<struct_conn id="connection_type">
+				
+					<dist_value>DISTANCE</dist_value>
+				
+					<ptnr1_auth_comp_id>THREE_LETTER_CODE</ptnr1_auth_comp_id>
+					<ptnr1_auth_seq_id>SEQUENCE_ID_FROM_AUTHORS</ptnr1_auth_seq_id>
+					<ptnr1_label_asym_id>STRUCTURE_ID</ptnr1_label_asym_id>
+					<ptnr1_label_atom_id>ATOM_ID</ptnr1_label_atom_id>
+					<ptnr1_label_comp_id>THREE_LETTER_CODE</ptnr1_label_comp_id>
 
+
+			
+					<ptnr2_auth_comp_id>THREE_LETTER_CODE</ptnr2_auth_comp_id>
+					<ptnr2_auth_seq_id>SEQUENCE_ID_FROM_AUTHORS</ptnr2_auth_seq_id>
+					<ptnr2_label_asym_id>STRUCTURE_ID</ptnr2_label_asym_id>
+					<ptnr2_label_atom_id>ATOM_ID</ptnr2_label_atom_id>
+					<ptnr2_label_comp_id>THREE_LETTER_CODE</ptnr2_label_comp_id>
+					<ptnr2_label_seq_id>SEQUENCE_ID_FROM_PDB</ptnr2_label_seq_id>
+				
+				</struct_conn>
+			</struct_connCategory>
+		
+	  	</pdb_id>
+	  
 	</PAS>
 </PAS_DATABASE>				

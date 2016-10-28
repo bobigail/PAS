@@ -1,29 +1,29 @@
-<ligand-database>
+<ligand_database>
     <ligand id="THREE_LETTER_ID"> <!-- <PDBx:three_letter_code> -->
         
         <name>NAME_IN_WORDS</name> <!-- ligand name <PDBx:name> -->
         <type>TYPE_OF_LIGAND</type> <!-- type of ligand <PDBx:type> -->
         <formula>CHEMICAL_FORMULA</formula> <!-- formula of ligand <PDBx:formula> -->
-        <pdbx-formal-charge>CHARGE_OF_LIGAND</pdbx-formal-charge> <!-- #charge of ligand <PDBx:pdbx_formal_charge> -->
+        <pdbx_formal_charge>CHARGE_OF_LIGAND</pdbx_formal_charge> <!-- #charge of ligand <PDBx:pdbx_formal_charge> -->
         
-        <pdbx-chem-comp-descriptorCategory> <!-- other descriptions inc SMILES <PDBx:pdbx_chem_comp_descriptorCategory> -->
-            <pdbx-chem-comp-descriptor comp_id="" type="eg_SMILES" program="PROGRAM_USED"> <!-- <PDBx:pdbx_chem_comp_descriptor -->
+        <pdbx_chem_comp_descriptorCategory> <!-- other descriptions inc SMILES <PDBx:pdbx_chem_comp_descriptorCategory> -->
+            <pdbx_chem_comp_descriptor comp_id="" type="eg_SMILES" program="PROGRAM_USED"> <!-- <PDBx:pdbx_chem_comp_descriptor -->
                 <descriptor>DESCRIPTION</descriptor>
-            </pdbx-chem-comp-descriptor>
-        </pdbx-chem-comp-descriptorCategory>
+            </pdbx_chem_comp_descriptor>
+        </pdbx_chem_comp_descriptorCategory>
         
-        <pdbx-chem-comp-identifierCategory> <!-- other names of ligand <PDBx:pdbx_chem_comp_identifierCategory> -->
-            <pdbx-chem-comp-identifier comp_id="THREE_LETTER_ID" type="TYPE_OF_OTHER_NAME"> <!-- <PDBx:pdbx_chem_comp_identifier -->
+        <pdbx_chem_comp_identifierCategory> <!-- other names of ligand <PDBx:pdbx_chem_comp_identifierCategory> -->
+            <pdbx_chem_comp_identifier comp_id="THREE_LETTER_ID" type="TYPE_OF_OTHER_NAME"> <!-- <PDBx:pdbx_chem_comp_identifier -->
                 <identifier>OTHER_NAME</identifier>
-            </pdbx-chem-comp-identifier>
-        </pdbx-chem-comp-identifierCategory>
+            </pdbx_chem_comp_identifier>
+        </pdbx_chem_comp_identifierCategory>
          
             
         
         
-        <chem-comp-atom-group> <!-- list of atom ids <PDBx:chem_comp_atomCategory> -->
-            <chem-comp-atom comp_id="THREE LETTER ID" atom_id="ATOM ID"/> <!-- <PDBx:chem_comp_atom comp_id="MAN" atom_id="C1"> -->
-        </chem-comp-atom-group>
+        <chem_comp_atom_group> <!-- list of atom ids <PDBx:chem_comp_atomCategory> -->
+            <chem_comp_atom comp_id="THREE LETTER ID" atom_id="ATOM ID"/> <!-- <PDBx:chem_comp_atom comp_id="MAN" atom_id="C1"> -->
+        </chem_comp_atom_group>
         
         
     </ligand>
